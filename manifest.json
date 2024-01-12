@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "Mon Extension Firefox",
+    "version": "1.0",
+    "description": "Une extension personnalisée pour la page nouvel onglet de Firefox",
+    "permissions": ["storage"],
+    "chrome_url_overrides": {
+      "newtab": "newtab/newtab.html"
+    },
+    "icons": {
+      "128": "img/icon128.png",
+      "48": "img/icon48.png",
+      "16": "img/icon16.png"   
+     },
+     "action": {
+      "default_icon": {
+        "128": "img/icon128.png",
+        "48": "img/icon48.png",
+        "16": "img/icon16.png"
+      },
+      "default_popup" : "popup/popup.html",
+      "default_title": "Pas touche !",
+      "default_badge_color": "FF0000"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://example.com/*"],
+        "css": ["styles.css"],
+        "js": ["content.js"],
+        "run_at": "document_end",
+        "all_frames": true
+        }
+      ]
+    
+}
