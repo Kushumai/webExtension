@@ -1,9 +1,11 @@
 {
     "manifest_version": 3,
-    "name": "Mon Extension Firefox",
+    "name": "Mon Extension Chrome",
     "version": "1.0",
-    "description": "Une extension personnalisée pour la page nouvel onglet de Firefox",
-    "permissions": ["storage"],
+    "description": "Une extension personnalisée pour la page nouvel onglet de Chrome",
+    "permissions": ["storage", "scripting", "webRequest", "activeTab","geolocation"],
+    "optional_permissions": ["topSites"],
+
     "chrome_url_overrides": {
       "newtab": "newtab/newtab.html"
     },
@@ -21,18 +23,6 @@
       "default_popup" : "popup/popup.html",
       "default_title": "Pas touche !",
       "default_badge_color": "FF0000"
-    },
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["https://example.com/*"],
-        "css": ["styles.css"],
-        "js": ["content.js"],
-        "run_at": "document_end",
-        "all_frames": true
-        }
-      ]
+    }
     
 }

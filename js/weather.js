@@ -1,5 +1,5 @@
 async function weather() {
-const url = 'https://open-weather13.p.rapidapi.com/city/landon';
+const url = 'https://open-weather13.p.rapidapi.com/city/latlon/48.8566/2.3522';
 const options = {
 	method: 'GET',
 	headers: {
